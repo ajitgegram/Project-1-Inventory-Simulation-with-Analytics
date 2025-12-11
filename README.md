@@ -8,15 +8,15 @@ Simulates single-product inventory management with deterministic ordering rules 
 
 ## Features
 
-- ✅ **Two Simulation Scenarios:**
+- Two Simulation Scenarios:
   - Scenario 1: Basic ordering (no lead time)
   - Scenario 2: Ordering with lead time
 
-- ✅ **Four Types of Analytics:**
-  1. **Descriptive Analytics** - What happened?
-  2. **Diagnostic Analytics** - Why did it happen?
-  3. **Predictive Analytics** - What will happen?
-  4. **Prescriptive Analytics** - What should we do?
+- Four Types of Analytics:
+  1. Descriptive Analytics - What happened?
+  2. Diagnostic Analytics- Why did it happen?
+  3. Predictive Analytics - What will happen?
+  4. Prescriptive Analytics- What should we do?
 
 ## Project Structure
 
@@ -106,12 +106,9 @@ analytics.prescriptive()    # What should we do?
 
 ## Example Output
 
-```
-============================================================
 DESCRIPTIVE ANALYTICS - What Happened?
-============================================================
 
-📊 Inventory Summary:
+Inventory Summary:
   Average Stock: 45.23 units
   Min Stock: -10.50 units
   Max Stock: 110.00 units
