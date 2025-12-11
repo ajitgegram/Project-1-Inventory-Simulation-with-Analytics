@@ -53,7 +53,7 @@ def test_analytics():
     print(f"  - Initial Stock: {params1.initial_stock} units")
     
     # Apply Analytics
-    print("\n📈 Applying Analytics...")
+    print("\n Applying Analytics...")
     analytics1 = InventoryAnalytics(results1)
     
     # 1. Descriptive Analytics
@@ -114,7 +114,7 @@ def test_analytics():
     print("COMPARISON: SCENARIO 1 vs SCENARIO 2")
     print("="*70)
     
-    print("\n📊 Key Differences:")
+    print("\n Key Differences:")
     print(f"  Scenario 1 (No Lead Time):")
     print(f"    - Shortage Days: {(results1['shortage'] > 0).sum()}")
     print(f"    - Average Stock: {results1['stock'].mean():.2f} units")
