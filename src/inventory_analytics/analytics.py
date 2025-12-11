@@ -53,14 +53,14 @@ class InventoryAnalytics:
         shortage_days = self.df[self.df['shortage'] > 0]
         
         if len(shortage_days) > 0:
-            print("\n🔍 Shortage Analysis:")
+            print("\n Shortage Analysis:")
             print(f"  First Shortage: Day {shortage_days['day'].iloc[0]}")
             print(f"  Last Shortage: Day {shortage_days['day'].iloc[-1]}")
             print(f"  Total Shortage Days: {len(shortage_days)}")
             print(f"  Average Stock Before Shortage: {shortage_days['stock'].mean():.2f} units")
             
             # Order pattern analysis
-            print("\n🔍 Order Pattern Analysis:")
+            print("\n Order Pattern Analysis:")
             order_days = self.df[self.df['order'] > 0]
             print(f"  Orders Placed: {len(order_days)} times")
             if len(order_days) > 1:
@@ -70,11 +70,11 @@ class InventoryAnalytics:
                 print(f"  Order Quantity: {self.df['order'].max():.2f} units per order")
             
             # Stock level before shortages
-            print("\n🔍 Stock Level Analysis:")
+            print("\n Stock Level Analysis:")
             print(f"  Average Stock Level: {self.df['stock'].mean():.2f} units")
             print(f"  Stock Level on Shortage Days: {shortage_days['stock'].mean():.2f} units")
         else:
-            print("\n🔍 No shortages occurred in this simulation")
+            print("\n No shortages occurred in this simulation")
             print("  → Inventory policy is working well")
     
     def predictive(self) -> None:
@@ -84,7 +84,7 @@ class InventoryAnalytics:
         print("="*60)
         
         # Stock trend analysis
-        print("\n🔮 Stock Trend Analysis:")
+        print("\n Stock Trend Analysis:")
         self.df['stock_lag1'] = self.df['stock'].shift(1)
         
         # Correlation between consecutive days
@@ -108,13 +108,13 @@ class InventoryAnalytics:
             avg_interval = sum(intervals) / len(intervals)
             last_shortage = shortage_days[-1]
             predicted_next = int(last_shortage + avg_interval)
-            print(f"\n🔮 Predicted Next Shortage: Around Day {predicted_next}")
+            print(f"\n Predicted Next Shortage: Around Day {predicted_next}")
             print(f"  Based on average interval of {avg_interval:.1f} days")
         elif len(shortage_days) == 1:
-            print(f"\n🔮 Only one shortage occurred on Day {shortage_days[0]}")
+            print(f"\n Only one shortage occurred on Day {shortage_days[0]}")
             print("  → Insufficient data for prediction")
         else:
-            print("\n🔮 No shortages occurred")
+            print("\n No shortages occurred")
             print("  → Current policy should prevent future shortages")
         
         # Trend analysis: first half vs second half
@@ -123,13 +123,13 @@ class InventoryAnalytics:
         second_half_shortages = self.df.iloc[mid_point:]['shortage'].sum()
         
         if second_half_shortages > first_half_shortages * 1.2:
-            print(f"\n🔮 Trend: Shortages increasing ({first_half_shortages} → {second_half_shortages})")
+            print(f"\n Trend: Shortages increasing ({first_half_shortages} → {second_half_shortages})")
             print("  → Action needed to prevent worsening situation")
         elif first_half_shortages > second_half_shortages * 1.2:
-            print(f"\n🔮 Trend: Shortages decreasing ({first_half_shortages} → {second_half_shortages})")
+            print(f"\n Trend: Shortages decreasing ({first_half_shortages} → {second_half_shortages})")
             print("  → Situation is improving")
         else:
-            print(f"\n🔮 Trend: Shortage pattern is stable")
+            print(f"\n Trend: Shortage pattern is stable")
     
     def prescriptive(self, threshold: float = 0.05) -> None:
         """Prescriptive Analytics: What should we do?"""
@@ -141,10 +141,10 @@ class InventoryAnalytics:
         avg_stock = self.df['stock'].mean()
         avg_demand = self.df['demand'].mean()
         
-        print("\n💡 Recommendations:")
+        print("\n Recommendations:")
         
         if shortage_rate > threshold:
-            print(f"  ⚠️  High shortage rate ({shortage_rate:.2%}) detected!")
+            print(f"  High shortage rate ({shortage_rate:.2%}) detected!")
             print(f"  Current average stock: {avg_stock:.2f} units")
             print(f"  Average daily demand: {avg_demand:.2f} units")
             
