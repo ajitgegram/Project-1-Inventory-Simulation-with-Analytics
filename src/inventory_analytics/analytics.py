@@ -38,8 +38,8 @@ class InventoryAnalytics:
         print(f"  Shortage Rate: {(self.df['shortage'] > 0).mean():.2%}")
         
         if self.df['demand'].sum() > 0:
-            fill_rate = (self.df['sales'].sum() / self.df['demand'].sum()) * 100
-            print(f"  Fill Rate: {fill_rate:.2%}")
+    fill_rate = self.df['sales'].sum() / self.df['demand'].sum()
+    print(f"  Fill Rate: {fill_rate:.2%}")
         
         print(f"  Total Orders Placed: {(self.df['order'] > 0).sum()} times")
         print(f"  Total Order Quantity: {self.df['order'].sum():.2f} units")
