@@ -44,7 +44,7 @@ def test_analytics():
     sim1 = InventorySimulation(params1)
     results1 = sim1.scenario_1_basic()
     
-    print(f"\n⚙️  Simulation Parameters:")
+    print(f"\n  Simulation Parameters:")
     print(f"  - Annual Demand: {params1.annual_demand} units")
     print(f"  - Days: {params1.days}")
     print(f"  - Lead Time: {params1.lead_time} days")
@@ -85,7 +85,7 @@ def test_analytics():
     sim2 = InventorySimulation(params2)
     results2 = sim2.scenario_2_leadtime()
     
-    print(f"\n⚙️  Simulation Parameters:")
+    print(f"\n  Simulation Parameters:")
     print(f"  - Annual Demand: {params2.annual_demand} units")
     print(f"  - Days: {params2.days}")
     print(f"  - Lead Time: {params2.lead_time} days")
@@ -94,7 +94,7 @@ def test_analytics():
     print(f"  - Initial Stock: {params2.initial_stock} units")
     
     # Apply Analytics
-    print("\n📈 Applying Analytics...")
+    print("\n Applying Analytics...")
     analytics2 = InventoryAnalytics(results2)
     
     # 1. Descriptive Analytics
