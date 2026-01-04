@@ -28,7 +28,7 @@ class InventoryAnalytics:
         print("DESCRIPTIVE ANALYTICS - What Happened?")
         print("="*60)
         
-        print("\n📊 Inventory Summary:")
+        print("\n Inventory Summary:")
         print(f"  Average Stock: {self.df['stock'].mean():.2f} units")
         print(f"  Min Stock: {self.df['stock'].min():.2f} units")
         print(f"  Max Stock: {self.df['stock'].max():.2f} units")
